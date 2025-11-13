@@ -1,3 +1,18 @@
+#primer entregable
+# Activar venv
+.\venv\Scripts\Activate.ps1
+
+# Migrar base de datos
+python manage.py migrate
+
+# Crear superusuario
+python manage.py createsuperuser
+
+# Ejecutar servidor
+python manage.py runserver
+
+# Poblar datos
+python poblar_datos.py
 # 1. SerializerMethodField
 ¿Qué es?
 SerializerMethodField es un campo de solo lectura en Django REST Framework que permite calcular y devolver valores personalizados basados en lógica de Python, en lugar de simplemente serializar campos del modelo.
@@ -148,4 +163,5 @@ SerializerMethodField → Personaliza la representación de datos
 django-filter → Permite consultas específicas y eficientes
 Paginación → Maneja grandes volúmenes de datos
 @action → Extiende funcionalidad más allá del CRUD básico
+
 
