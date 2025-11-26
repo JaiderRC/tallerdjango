@@ -1,10 +1,15 @@
 from django.contrib import admin
 from .models import Autor, Libro, Resena
 
+class LibroInline(admin.TabularInline):
+    model = Libro
+    extra = 0
+
 @admin.register(Autor)
 class AutorAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'nacionalidad')
     search_fields = ('nombre',)
+    inlines = [LibroInline]
 
 @admin.register(Libro)
 class LibroAdmin(admin.ModelAdmin):
